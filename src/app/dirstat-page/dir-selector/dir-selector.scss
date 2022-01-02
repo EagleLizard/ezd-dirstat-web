@@ -1,0 +1,80 @@
+
+@import '../../../global.scss';
+
+$dir-menu-border-color: rgba(0, 0, 0, 0.6);
+
+.dir-selector {
+
+}
+
+.dir-selector-modal-container {
+  box-sizing: border-box;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 40vh;
+  border: 1px solid black;
+  background-color: white;
+  .dir-selector-modal-body {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+}
+
+.dir-menu {
+
+  background-color: white;
+  
+  .back-button-container {
+    user-select: none;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid $dir-menu-border-color;
+    border-bottom: 0;
+    &:hover {
+      background-color: top-nav-background-color(0.3);
+    }
+  }
+  .dir-menu-item {
+    display: flex;
+    box-sizing: border-box;
+    border: 1px solid $dir-menu-border-color;
+    &:not(:last-child) {
+      border-bottom: 0px;
+    }
+    .dir-path,
+    .dir-drill-container {
+      transition: background-color 0.3s ease;
+      user-select: none;
+      cursor: pointer;
+    }
+    .dir-path {
+      box-sizing: content-box;
+      flex: 1 0;
+      padding: 5px;
+      word-break: break-word;
+      &:hover {
+        background-color: top-nav-background-color(0.3);
+      }
+    }
+    .dir-drill-container {
+      display: flex;
+      align-items: center;
+      flex: 0 1;
+      min-width: 30px;
+      border-left: 1px solid $dir-menu-border-color;
+      &:hover {
+        background-color: top-nav-background-color(0.5);
+      }
+      .drill-icon-container {
+        text-align: center;
+        flex: 1 1;
+      }
+    }
+  }
+}
